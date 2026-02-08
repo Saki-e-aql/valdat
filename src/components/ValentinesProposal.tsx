@@ -132,7 +132,7 @@ export default function ValentinesProposal() {
             <h2
               className={`text-5xl font-semibold mb-8 ${playfairDisplay.className}`}
             >
-              Will you be my Valentine?
+              Meri toh h hi BUT Will you be my Valentine?
             </h2>
             <Image
               src="/sad_hamster.png"
@@ -175,7 +175,7 @@ export default function ValentinesProposal() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            Thank you for accepting, I love you! 💕
+            HEHE PHAS GYI NA MERY JAAL MAIN, I love you! 💕
             <p className="text-sm mt-4">For more information, write me!!! 💌</p>
             <Image
               src="/hamster_jumping.gif"
