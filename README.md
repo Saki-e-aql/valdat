@@ -57,6 +57,37 @@ yarn dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+## Docker 🐳
+
+Prebuilt images are published to GHCR. The app listens on port 3000.
+
+### Docker Compose
+```yaml
+services:
+  valentines:
+    image: ghcr.io/visibait/valentines:latest
+    container_name: valentines
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./photos:/app/public/game-photos:ro
+```
+
+To replace other public assets (like the hamster images), replace the volume with `- ./public:/app/public:ro`.
+
+Start the container:
+```bash
+# Create a photos directory and add 1.avif through 36.avif
+mkdir -p photos
+chown 10001:10001 photos
+
+# Start the app
+docker compose up -d
+```
+
+Access the web UI at http://localhost:3000
+
 ## Customization 🎨
 
 ### Changing Photos
@@ -66,8 +97,8 @@ yarn dev
 - Convert your images to .avif format for better performance
 
 ### Modifying Text
-- Edit proposal messages in `components/ValentinesProposal.tsx`
-- Change game instructions in `components/TextFooter.tsx`
+- Edit proposal messages in `src/components/ValentinesProposal.tsx`
+- Change game instructions in `src/components/TextFooter.tsx`
 
 ### Styling
 - The project uses Tailwind CSS for styling
