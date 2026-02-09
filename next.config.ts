@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Your Next.js config
+  output: "export",
+  basePath: process.env.BASE_PATH || "",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
